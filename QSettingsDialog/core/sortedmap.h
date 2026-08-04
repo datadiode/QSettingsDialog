@@ -213,7 +213,7 @@ bool SortedMap<TId, TEntry>::remove(int index)
 {
 	Q_ASSERT(index < this->entryOrder.size());
 	TId id = this->entryOrder.takeAt(index);
-	return this->entryMap.remove(id) > 0;
+	return this->entryMap.remove(id);
 }
 
 template <typename TId, typename TEntry>

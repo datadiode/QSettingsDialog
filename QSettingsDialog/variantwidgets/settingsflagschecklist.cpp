@@ -11,7 +11,7 @@ SettingsFlagsCheckList::SettingsFlagsCheckList(const QMetaEnum &metaEnum, QWidge
 	m_translated(false)
 {
 	this->checkGroup->setExclusive(false);
-	connect(this->checkGroup, QOverload<int>::of(&QButtonGroup::buttonClicked),
+	connect(this->checkGroup, &QButtonGroup::idClicked,
 			this, &SettingsFlagsCheckList::updateFlags);
 
 	auto layout = new QVBoxLayout(this);

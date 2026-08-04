@@ -3,6 +3,7 @@
 
 #include <QtCore/qglobal.h>
 #include <QSharedPointer>
+#include <QWidget>
 #ifndef QT_NO_DEBUG
 #include <QDebug>
 #endif

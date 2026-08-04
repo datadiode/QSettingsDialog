@@ -73,7 +73,7 @@ QHash<QString, QSettingsSettingsLoader *> QSettingsSettingsLoader::createLoaders
 		foreach(auto group, settings->childGroups()) {
 			auto newKey = beginBase + group;
 			settings->beginGroup(rootKey);
-			resMap.unite(createLoadersImpl(settings, newKey, true));
+			resMap.insert(createLoadersImpl(settings, newKey, true));
 			settings->endGroup();
 		}
 	}

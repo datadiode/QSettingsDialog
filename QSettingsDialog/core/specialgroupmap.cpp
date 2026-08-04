@@ -57,9 +57,9 @@ bool SpecialGroupMap::remove(int index)
 	Q_ASSERT(index < this->totalOrder.size());
 	auto key = this->totalOrder.takeAt(index);
     if(key.type() == QVariant::Int)
-		return this->customGroups.remove(key.toInt()) > 0;
+		return this->customGroups.remove(key.toInt());
 	else
-		return this->groups.remove(key.toString()) > 0;
+		return this->groups.remove(key.toString());
 }
 
 SpecialGroupMap::Entry SpecialGroupMap::take(int index)
@@ -172,7 +172,7 @@ QSharedPointer<SettingsGroup> SpecialGroupMap::valueId(const QString &id) const
 
 bool SpecialGroupMap::removeId(const QString &id)
 {
-	if(this->groups.remove(id) > 0) {
+	if(this->groups.remove(id)) {
 		auto index = this->index(id);
 		Q_ASSERT(index >= 0);
 		this->totalOrder.removeAt(index);
@@ -282,7 +282,7 @@ QSharedPointer<QSettingsEntry> SpecialGroupMap::valueId(const int &id) const
 
 bool SpecialGroupMap::removeId(const int &id)
 {
-	if(this->customGroups.remove(id) > 0) {
+	if(this->customGroups.remove(id)) {
 		auto index = this->index(id);
 		Q_ASSERT(index >= 0);
 		this->totalOrder.removeAt(index);

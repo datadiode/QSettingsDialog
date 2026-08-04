@@ -100,7 +100,7 @@
          <enum>QListView::Adjust</enum>
         </property>
         <property name="spacing">
-         <number>1</number>
+         <number>0</number>
         </property>
        </widget>
       </item>
@@ -110,19 +110,6 @@
          <enum>Qt::Vertical</enum>
         </property>
        </widget>
-      </item>
-      <item>
-       <spacer name="categoryLineSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>6</width>
-          <height>0</height>
-         </size>
-        </property>
-       </spacer>
       </item>
      </layout>
     </widget>

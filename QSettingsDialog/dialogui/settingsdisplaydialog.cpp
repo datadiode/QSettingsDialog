@@ -47,14 +47,10 @@ SettingsDisplayDialog::SettingsDisplayDialog(QSettingsWidgetDialogEngine *dialog
 											  qMax(qRound(listSpacing * (2./3.)), 1),
 											  this);
 	this->ui->categoryListWidget->setItemDelegate(this->delegate);
-	this->ui->categoryListWidget->setSpacing(qMax(qRound(listSpacing / 3.), 1) - 1);
 
 	int spacing = this->calcSpacing(Qt::Horizontal);
 	this->ui->contentLayout->setSpacing(spacing);
-	this->ui->categoryLineSpacer->changeSize(spacing,
-											 0,
-											 QSizePolicy::Fixed,
-											 QSizePolicy::Fixed);
+	this->ui->listSeperatorLine->setFixedWidth(2 * spacing);
 
 	//engine
 	connect(this->engine, &SettingsEngine::operationCompleted,
@@ -341,7 +337,6 @@ void SettingsDisplayDialog::createCategory(const QSharedPointer<SettingsCategory
 	item->setIcon(category->icon);
 	item->setToolTip(category->tooltip.isNull() ? category->name : category->tooltip);
 	auto tab = new QTabWidget();
-	tab->setTabBarAutoHide(true);
 
 	this->ui->contentStackWidget->addWidget(tab);
 	this->ui->categoryListWidget->addItem(item);

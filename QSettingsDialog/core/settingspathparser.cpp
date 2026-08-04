@@ -1,17 +1,13 @@
 #include "settingspathparser.h"
 
 const QRegularExpression SettingsPathParser::realIdRegex(QStringLiteral(R"__(^([0-9a-z_\-]+)$)__"),
-														 QRegularExpression::CaseInsensitiveOption |
-														 QRegularExpression::OptimizeOnFirstUsageOption);
+														 QRegularExpression::CaseInsensitiveOption);
 const QRegularExpression SettingsPathParser::allIdRegex(QStringLiteral(R"__(^([0-9a-z_\-]*|\.)$)__"),
-														QRegularExpression::CaseInsensitiveOption |
-														QRegularExpression::OptimizeOnFirstUsageOption);
+														QRegularExpression::CaseInsensitiveOption);
 const QRegularExpression SettingsPathParser::fullPathRegex(QStringLiteral(R"__(^(\.\.|([0-9a-z_\-]*|\.)\/([0-9a-z_\-]*|\.)(?:(\/)([0-9a-z_\-]*))?)?$)__"),
-														   QRegularExpression::CaseInsensitiveOption |
-														   QRegularExpression::OptimizeOnFirstUsageOption);
+														   QRegularExpression::CaseInsensitiveOption);
 const QRegularExpression SettingsPathParser::partialPathRegex(QStringLiteral(R"__(^(\.\.|([0-9a-z_\-]*|\.)(?:\/([0-9a-z_\-]*|\.)(?:\/([0-9a-z_\-]*|\.))?)?)?$)__"),
-															  QRegularExpression::CaseInsensitiveOption |
-															  QRegularExpression::OptimizeOnFirstUsageOption);
+															  QRegularExpression::CaseInsensitiveOption);
 
 void SettingsPathParser::validateId(const QString &id, bool realIdOnly)
 {

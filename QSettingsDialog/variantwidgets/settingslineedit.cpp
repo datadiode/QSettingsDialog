@@ -96,7 +96,7 @@ SettingsUuidEdit::SettingsUuidEdit(QWidget *parent) :
 	QSettingsWidget(parent)
 {
 	static const QRegularExpression regex(QStringLiteral(R"__(^\{?[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\}?$)__"),
-														 QRegularExpression::CaseInsensitiveOption | QRegularExpression::OptimizeOnFirstUsageOption);
+														 QRegularExpression::CaseInsensitiveOption);
 	this->setValidator(new QRegularExpressionValidator(regex, this));
 	connect(this, &SettingsUrlLineEdit::editingFinished, this, [this](){
 		QString text = this->text();

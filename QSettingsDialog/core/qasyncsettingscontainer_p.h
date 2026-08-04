@@ -37,7 +37,6 @@ private:
 };
 
 Q_DECLARE_METATYPE(QAsyncSettingsContainerPrivate::EntryInfo)
-Q_DECLARE_METATYPE(QSharedPointer<QSettingsEntry>)
 Q_DECLARE_OPAQUE_POINTER(QSettingsDialog*)
 Q_DECLARE_METATYPE(QSettingsDialog*)
 
