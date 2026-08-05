@@ -413,6 +413,8 @@ void SettingsDisplayDialog::createEntry(const QSharedPointer<QSettingsEntry> &en
 	CheckingHelper *labelAsHelper = nullptr;
 	if(entry->isOptional()) {
 		auto optBox = new CheckingCheckBox(this);
+		QWidget::setTabOrder(optBox, settingsWidget->asWidget());
+		optBox->setStyleSheet(QString("QCheckBox::indicator{width:%1;height:%1;}").arg(optBox->fontMetrics().height() * 3 / 2));
 		optBox->setText(entry->entryName() + tr(":"));
 		QObject::connect(optBox, &QCheckBox::toggled,
 						 content, &QWidget::setEnabled);

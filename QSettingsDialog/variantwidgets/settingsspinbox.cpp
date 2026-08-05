@@ -2,7 +2,9 @@
 
 SettingsSpinBox::SettingsSpinBox(QWidget *parent) :
 	QSettingsWidget(parent)
-{}
+{
+	this->setStyleSheet("QSpinBox{padding:1px 0px 1px 0px;}");
+}
 
 void SettingsSpinBox::setValue(const QVariant &value)
 {

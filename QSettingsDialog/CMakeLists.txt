@@ -56,7 +56,7 @@ set_target_properties(QSettingsDialog PROPERTIES
     AUTORCC ON
 )
 
-target_include_directories(QSettingsDialog PUBLIC
+target_include_directories(QSettingsDialog PRIVATE
     core
     dialogui
     loaders
@@ -64,6 +64,13 @@ target_include_directories(QSettingsDialog PUBLIC
     submodules/QColorEdit
     submodules/QPathEdit/QPathEdit
     variantwidgets
+)
+
+target_include_directories(QSettingsDialog INTERFACE
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/core
+    ${CMAKE_CURRENT_SOURCE_DIR}/loaders
+    ${CMAKE_CURRENT_SOURCE_DIR}/variantwidgets
 )
 
 target_compile_definitions(QSettingsDialog PRIVATE

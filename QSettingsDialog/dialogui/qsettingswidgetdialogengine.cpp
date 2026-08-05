@@ -47,17 +47,7 @@ QSettingsDisplayInstance *QSettingsWidgetDialogEngine::createInstance()
 
 QString QSettingsWidgetDialogEngine::searchStyleSheet() const
 {
-	return QStringLiteral("QLabel {"
-						  "    background-color: rgba(19,232,51,0.4);"
-						  "    border: 1px solid rgba(19,196,45,0.8);"
-						  "    border-radius: 4px;"
-						  "}"
-						  "QCheckBox {"
-						  "    background-color: rgba(19,232,51,0.4);"
-						  "    padding: 1px;"
-						  "    border: 1px solid rgba(19,196,45,0.8);"
-						  "    border-radius: 4px;"
-						  "}");
+	return QStringLiteral("QLabel,QCheckBox{background-color:rgba(19,232,51,0.4);}");
 }
 
 void QSettingsWidgetDialogEngine::addFactory(int displayId, QSettingsWidgetFactory *factory)
