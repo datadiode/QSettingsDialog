@@ -55,6 +55,7 @@ protected:
 	void showEvent(QShowEvent *ev) override;
 
 private slots:
+	void startLoading();
 	void startSaving(bool isApply);
 	void startResetting();
 

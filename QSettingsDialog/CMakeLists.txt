@@ -66,7 +66,7 @@ target_include_directories(QSettingsDialog PUBLIC
     variantwidgets
 )
 
-target_compile_definitions(QSettingsDialog PUBLIC
+target_compile_definitions(QSettingsDialog PRIVATE
     QSETTINGSDIALOG_LIBRARY
 )
 

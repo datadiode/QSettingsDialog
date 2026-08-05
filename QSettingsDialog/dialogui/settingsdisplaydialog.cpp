@@ -100,6 +100,12 @@ int SettingsDisplayDialog::exec()
 
 void SettingsDisplayDialog::showEvent(QShowEvent *ev)
 {
+	startLoading();
+	this->QDialog::showEvent(ev);
+}
+
+void SettingsDisplayDialog::startLoading()
+{
 	this->currentMode = Load;
 	this->workingDialog = DialogMaster::createProgress(this, tr("Loading settings…"), 1);
 	this->workingDialog->setMaximum(0);
@@ -114,7 +120,6 @@ void SettingsDisplayDialog::showEvent(QShowEvent *ev)
 			this->workingDialog, &QProgressDialog::setValue);
 
 	this->engine->startLoading();
-	this->QDialog::showEvent(ev);
 }
 
 void SettingsDisplayDialog::startSaving(bool isApply)
@@ -217,11 +222,11 @@ void SettingsDisplayDialog::engineFinished(int errorCount)
 				QMetaObject::invokeMethod(this, "startResetting", Qt::QueuedConnection);
 			else if(res == QMessageBox::Ignore) {
 				emit resetted();
-				this->accept();
+				QMetaObject::invokeMethod(this, "startLoading", Qt::QueuedConnection);
 			}
 		} else {
 			emit resetted();
-			this->accept();
+			QMetaObject::invokeMethod(this, "startLoading", Qt::QueuedConnection);
 		}
 		break;
 	default:
