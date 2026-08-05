@@ -2,7 +2,9 @@
 
 SettingsCheckBox::SettingsCheckBox(QWidget *parent) :
 	QSettingsWidget(parent)
-{}
+{
+	this->setStyleSheet(QString("QCheckBox::indicator{height:%1;}").arg(this->fontMetrics().height() * 3 / 2));
+}
 
 void SettingsCheckBox::setValue(const QVariant &value)
 {

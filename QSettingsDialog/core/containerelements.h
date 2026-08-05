@@ -8,7 +8,7 @@
 #include "specialgroupmap.h"
 #include "qsettingsentry.h"
 #include "exceptions.h"
-#include <qsettingsdialog.h>
+#include "qsettingsdialog.h"
 
 class QSettingsContainer;
 struct SettingsGroup

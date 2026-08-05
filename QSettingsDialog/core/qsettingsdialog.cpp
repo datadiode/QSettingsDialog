@@ -474,6 +474,8 @@ int QSettingsDialogPrivate::showDialog(bool asExec, QWidget *parentWindow)
 
 	QObject::connect(this->currentDialog.data(), SIGNAL(saved(bool)),
 					 this->q_ptr, SIGNAL(saved(bool)));
+	QObject::connect(this->currentDialog.data(), SIGNAL(resetted()),
+					 this->q_ptr, SIGNAL(resetted()));
 	QObject::connect(this->currentDialog.data(), SIGNAL(canceled()),
 					 this->q_ptr, SIGNAL(canceled()));
 
