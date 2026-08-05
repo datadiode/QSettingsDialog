@@ -7,6 +7,10 @@ find_package(Qt6 REQUIRED COMPONENTS Concurrent Gui Widgets)
 
 qt_standard_project_setup()
 
+option(BUILD_EXAMPLES "Build the examples" ON)
 
 add_subdirectory(QSettingsDialog)
-add_subdirectory(Examples)
+
+if(BUILD_EXAMPLES)
+    add_subdirectory(Examples)
+endif()
