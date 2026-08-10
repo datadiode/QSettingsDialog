@@ -1,13 +1,14 @@
 #ifndef CONTAINERELEMENT_H
 #define CONTAINERELEMENT_H
 
-#include <QObject>
+#include <QString>
 #include <QIcon>
 #include <QSharedPointer>
 #include "sortedmap.h"
 #include "specialgroupmap.h"
 #include "qsettingsentry.h"
 #include "exceptions.h"
+#include "./qsettingsdialog.h"
 
 class QSettingsContainer;
 struct SettingsGroup
@@ -44,7 +45,7 @@ struct SettingsSection
 	{}
 
 	static inline QSharedPointer<SettingsSection> createDefaultSection() {
-		return QSharedPointer<SettingsSection>(new SettingsSection(QObject::tr("General")));
+		return QSharedPointer<SettingsSection>(new SettingsSection(QSettingsDialog::tr("General")));
 	}
 };
 
@@ -66,7 +67,7 @@ struct SettingsCategory
 	{}
 
 	static inline QSharedPointer<SettingsCategory> createDefaultCategory() {
-		auto cat = new SettingsCategory(QObject::tr("General Settings"));
+		auto cat = new SettingsCategory(QSettingsDialog::tr("General Settings"));
 		cat->icon = QIcon(QStringLiteral(":/QSettingsDialog/icons/settings.ico"));
 		return QSharedPointer<SettingsCategory>(cat);
 	}

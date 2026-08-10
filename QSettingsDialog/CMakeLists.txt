@@ -153,7 +153,7 @@ qt_add_resources(QSettingsDialog "qsettingsdialog_variantwidgets_res"
         ${qsettingsdialog_variantwidgets_res_resource_files}
 )
 
-install(TARGETS QSettingsDialog
+install(TARGETS QSettingsDialog COMPONENT QSettingsDialog
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     FRAMEWORK DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
