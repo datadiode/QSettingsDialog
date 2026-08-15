@@ -71,7 +71,7 @@ void QSettingsWidgetDialogEngine::cloneGroupFactoryWithProperties(int originalId
 	}
 }
 
-QSettingsWidgetBase *QSettingsWidgetDialogEngine::createWidget(int displayId, const UiPropertyMap &properties, QWidget *parent) const
+QSettingsWidgetBase *QSettingsWidgetDialogEngine::createWidget(int displayId, const UiPropertyMap &properties, bool hideable, QWidget *parent) const
 {
 	QSettingsWidgetBase *widget = nullptr;
 
@@ -85,7 +85,7 @@ QSettingsWidgetBase *QSettingsWidgetDialogEngine::createWidget(int displayId, co
 	}
 
 	if(widget)
-		widget->initialize(properties);
+		widget->initialize(properties, hideable);
 	return widget;
 }
 

@@ -15,6 +15,7 @@ public:
 		loader(loader),
 		name(),
 		optional(),
+		hideable(),
 		tooltip(),
 		properties()
 #ifndef QT_NO_DEBUG
@@ -27,6 +28,7 @@ public:
 
 	QString name;
 	bool optional;
+	bool hideable;
 	QString tooltip;
 
 	UiPropertyMap properties;

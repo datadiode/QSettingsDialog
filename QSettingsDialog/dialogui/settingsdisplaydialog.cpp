@@ -403,7 +403,7 @@ void SettingsDisplayDialog::createGroup(const QSharedPointer<SettingsGroup> &gro
 void SettingsDisplayDialog::createEntry(const QSharedPointer<QSettingsEntry> &entry, QWidget *sectionWidget, QFormLayout *layout)
 {
 	QWidget *content = nullptr;
-	auto settingsWidget = this->dialogEngine->createWidget(entry->displaytype(), entry->uiProperties(), sectionWidget);
+	auto settingsWidget = this->dialogEngine->createWidget(entry->displaytype(), entry->uiProperties(), entry->isHideable(), sectionWidget);
 	if(settingsWidget)
 		content = settingsWidget->asWidget();
 	else
@@ -444,7 +444,7 @@ void SettingsDisplayDialog::createEntry(const QSharedPointer<QSettingsEntry> &en
 {
 	auto groupWidget = group->asWidget();
 	QWidget *content = nullptr;
-	auto settingsWidget = this->dialogEngine->createWidget(entry->displaytype(), entry->uiProperties(), groupWidget);
+	auto settingsWidget = this->dialogEngine->createWidget(entry->displaytype(), entry->uiProperties(), entry->isHideable(), groupWidget);
 	if(settingsWidget)
 		content = settingsWidget->asWidget();
 	else
@@ -546,15 +546,19 @@ bool SettingsDisplayDialog::searchInSection(const QRegularExpression &regex, QWi
 
 bool SettingsDisplayDialog::searchInEntry(const QRegularExpression &regex, QWidget *label, QSettingsWidgetBase *content)
 {
-	if(!regex.pattern().isEmpty() &&
-	   (regex.match(label->property("text").toString()).hasMatch() ||
-		(content && content->searchExpression(regex)))) {
+	bool hasPattern = !regex.pattern().isEmpty();
+	bool hasMatch = hasPattern && (regex.match(label->property("text").toString()).hasMatch() || content && content->searchExpression(regex));
+	if(hasMatch) {
 		label->setStyleSheet(this->dialogEngine->searchStyleSheet());
-		return true;
 	} else {
 		label->setStyleSheet(QString());
-		return false;
 	}
+	if(content && content->isHideable()) {
+		bool visible = !hasPattern || hasMatch;
+		label->setVisible(visible);
+		content->asWidget()->setVisible(visible);
+	}
+	return hasMatch;
 }
 
 

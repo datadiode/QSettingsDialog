@@ -44,6 +44,16 @@ void QSettingsEntry::setOptional(bool optional)
 	d->optional = optional;
 }
 
+bool QSettingsEntry::isHideable() const
+{
+	return d->hideable;
+}
+
+void QSettingsEntry::setHideable(bool hideable)
+{
+	d->hideable = hideable;
+}
+
 QString QSettingsEntry::tooltip() const
 {
 	return d->tooltip;

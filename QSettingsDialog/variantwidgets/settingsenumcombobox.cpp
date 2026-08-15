@@ -137,7 +137,7 @@ SettingsEnumEditWrapper::SettingsEnumEditWrapper(const QMetaEnum &metaEnum, QWid
 	layout->addWidget(this->current->asWidget());
 }
 
-void SettingsEnumEditWrapper::initialize(const UiPropertyMap &uiPropertyMap)
+void SettingsEnumEditWrapper::initialize(const UiPropertyMap &uiPropertyMap, bool hideable)
 {
 	if(uiPropertyMap.contains(QStringLiteral("showAsRadio"))) {
 		auto asRadio = uiPropertyMap.value(QStringLiteral("showAsRadio")).toBool();
@@ -149,7 +149,7 @@ void SettingsEnumEditWrapper::initialize(const UiPropertyMap &uiPropertyMap)
 		this->layout()->addWidget(this->current->asWidget());
 	}
 
-	this->current->initialize(uiPropertyMap);
+	this->current->initialize(uiPropertyMap, hideable);
 }
 
 bool SettingsEnumEditWrapper::hasValueChanged() const

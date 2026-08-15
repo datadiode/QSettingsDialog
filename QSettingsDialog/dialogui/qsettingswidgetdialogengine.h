@@ -40,6 +40,7 @@ public:
 	//! @intuse Tries to create a new settings widget for the given id
 	QSettingsWidgetBase *createWidget(int displayId,
 									  const UiPropertyMap &properties,
+									  bool hideable,
 									  QWidget *parent) const;
 	//! @intuse Tries to create a new group widget for the given id
 	QSettingsGroupWidgetBase *createGroupWidget(int displayId,

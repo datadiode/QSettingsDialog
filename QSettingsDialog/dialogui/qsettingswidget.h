@@ -19,7 +19,10 @@ public:
 	//! Must return this as QWidget (a cast)
 	virtual QWidget *asWidget() = 0;
 	//! Will be called to initialize the widgets properties with the given ones
-	virtual void initialize(const UiPropertyMap &uiPropertyMap) = 0;
+	virtual void initialize(const UiPropertyMap &uiPropertyMap, bool hideable) = 0;
+
+	//! Whether to hide the widget if it does not match the current search pattern
+	virtual bool isHideable() const = 0;
 
 	//! Will be called to determine, whether the value has changed or not
 	virtual bool hasValueChanged() const;
@@ -50,16 +53,23 @@ public:
 	//! Creates a new widget with a parent
 	inline QSettingsWidget(QWidget *parent = nullptr) :
 		TWidget(parent),
-		QSettingsWidgetBase()
+		QSettingsWidgetBase(),
+		hideable(false)
 	{}
 
 	inline QWidget *asWidget() final {
 		return this;
 	}
-	void initialize(const UiPropertyMap &uiPropertyMap) override {
+	void initialize(const UiPropertyMap &uiPropertyMap, bool hideable) override {
 		for(UiPropertyMap::const_iterator it = uiPropertyMap.constBegin(), end = uiPropertyMap.constEnd(); it != end; ++it)
 			this->setProperty(it.key().toLocal8Bit().constData(), it.value());
+		this->hideable = hideable;
 	}
+	bool isHideable() const override {
+		return hideable;
+	}
+private:
+	bool hideable;
 };
 
 Q_DECLARE_METATYPE(QSettingsWidgetBase*)

@@ -41,6 +41,10 @@ public:
 	bool isOptional() const;
 	//! Sets the entry be optional or not optional
 	void setOptional(bool optional);
+	//! Specifies, whether the entry is hideable or not
+	bool isHideable() const;
+	//! Sets the entry be hideable or not hideable
+	void setHideable(bool hideable);
 	//! Returns the tooltip this entry has
 	QString tooltip() const;
 	//! Sets this entries tooltip
