@@ -8,7 +8,6 @@
 #include "specialgroupmap.h"
 #include "qsettingsentry.h"
 #include "exceptions.h"
-#include "./qsettingsdialog.h"
 
 class QSettingsContainer;
 struct SettingsGroup
@@ -29,7 +28,7 @@ struct SettingsGroup
 	{}
 };
 
-struct SettingsSection
+struct QSETTINGSDIALOGSHARED_EXPORT SettingsSection
 {
 	QString name;
 	QIcon icon;
@@ -44,12 +43,10 @@ struct SettingsSection
 		groups()
 	{}
 
-	static inline QSharedPointer<SettingsSection> createDefaultSection() {
-		return QSharedPointer<SettingsSection>(new SettingsSection(QSettingsDialog::tr("General")));
-	}
+	static QSharedPointer<SettingsSection> createDefaultSection();
 };
 
-struct SettingsCategory
+struct QSETTINGSDIALOGSHARED_EXPORT SettingsCategory
 {
 	QString name;
 	QIcon icon;
@@ -66,11 +63,7 @@ struct SettingsCategory
 		sections()
 	{}
 
-	static inline QSharedPointer<SettingsCategory> createDefaultCategory() {
-		auto cat = new SettingsCategory(QSettingsDialog::tr("General Settings"));
-		cat->icon = QIcon(QStringLiteral(":/QSettingsDialog/icons/settings.ico"));
-		return QSharedPointer<SettingsCategory>(cat);
-	}
+	static QSharedPointer<SettingsCategory> createDefaultCategory();
 };
 
 struct SettingsRoot

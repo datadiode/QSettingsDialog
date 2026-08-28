@@ -80,7 +80,7 @@ The documentation is available within the releases and on [github pages](https:/
 The documentation was created using [doxygen](http://www.stack.nl/~dimitri/doxygen/). It includes an HTML-documentation and Qt-Help files that can be included into QtCreator (QtAssistant) to show F1-Help (See [Adding External Documentation](https://doc.qt.io/qtcreator/creator-help.html#adding-external-documentation) for more details).
 
 ## Translation
-Comming soon. The code is prepared, but that's it for know.
+The visible texts baked into the library can be translated at the discretion of the hosting application by providing suitable translations in context `SettingsDisplayDialog`.
 
 ## Submodules
 The library makes use of three submodules:

@@ -1,5 +1,5 @@
 qt_add_library(QSettingsDialog
-    core/containerelements.h
+    core/containerelements.cpp core/containerelements.h
     core/exceptions.cpp core/exceptions.h
     core/qasyncsettingscontainer.cpp core/qasyncsettingscontainer.h core/qasyncsettingscontainer_p.h
     core/qsettingscontainer.cpp core/qsettingscontainer.h
