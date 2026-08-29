@@ -61,18 +61,18 @@ int main(int argc, char *argv[])
 
 	//create the dialog
 	QSettingsDialog dialog;
-	
+
 	// add a new entry
 	dialog.appendEntry(new QSettingsEntry(QMetaType::QString,// <- The display id. In this case, an edit for a QString is loaded, a QLineEdit
 										  new QSettingsSettingsLoader(&settings, "appName"),// <- The loader loads a value with the key "appName" from the settings
 										  "App name"));//Other properties of the entry, i.e. The label text
-	
+
 	//show the dialog (blocking)
 	return dialog.execSettings();
 }
 ```
 
-For more advanced examples, check the examples subfolder of the project and the documentation. 
+For more advanced examples, check the examples subfolder of the project and the documentation.
 
 ## Documentation
 The documentation is available within the releases and on [github pages](https://skycoder42.github.io/QSettingsDialog/).
@@ -87,6 +87,6 @@ The library makes use of three submodules:
 - https://github.com/datadiode/DialogMaster
 - https://github.com/datadiode/QPathEdit
 - https://github.com/datadiode/QColorEdit
- 
+
 ## Icon sources/Links
-All icons come from http://www.fatcow.com/
+All icons come from https://github.com/gammasoft/fatcow and are licensed under [CC-BY-3.0](https://creativecommons.org/licenses/by/3.0/).
