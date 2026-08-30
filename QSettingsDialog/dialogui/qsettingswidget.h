@@ -50,12 +50,8 @@ template <class TWidget>
 class QSettingsWidget : public TWidget, public QSettingsWidgetBase
 {
 public:
-	//! Creates a new widget with a parent
-	inline QSettingsWidget(QWidget *parent = nullptr) :
-		TWidget(parent),
-		QSettingsWidgetBase(),
-		hideable(false)
-	{}
+	//! Creates a new widget
+	using TWidget::TWidget;
 
 	inline QWidget *asWidget() final {
 		return this;
@@ -69,7 +65,7 @@ public:
 		return hideable;
 	}
 private:
-	bool hideable;
+	bool hideable = false;
 };
 
 Q_DECLARE_METATYPE(QSettingsWidgetBase*)

@@ -3,7 +3,7 @@
 #include <QStandardPaths>
 
 SettingsPathEdit::SettingsPathEdit(QWidget *parent) :
-	QSettingsWidget(parent)
+	QSettingsWidget(parent, QPathEdit::SeperatedButton)
 {
 	this->setEditable(true);
 }
