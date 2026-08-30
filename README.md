@@ -79,8 +79,8 @@ The documentation is available within the releases and on [github pages](https:/
 
 The documentation was created using [doxygen](http://www.stack.nl/~dimitri/doxygen/). It includes an HTML-documentation and Qt-Help files that can be included into QtCreator (QtAssistant) to show F1-Help (See [Adding External Documentation](https://doc.qt.io/qtcreator/creator-help.html#adding-external-documentation) for more details).
 
-## Translation
-The visible texts baked into the library can be translated at the discretion of the hosting application by providing suitable translations in context `SettingsDisplayDialog`.
+## Translation and icon customization
+The visible texts as well as the icon paths baked into the library can be translated at the discretion of the hosting application by providing suitable translations in context `SettingsDisplayDialog`.
 
 ## Submodules
 The library makes use of three submodules:
@@ -89,4 +89,4 @@ The library makes use of three submodules:
 - https://github.com/datadiode/QColorEdit
 
 ## Icon sources/Links
-All icons come from https://github.com/gammasoft/fatcow and are licensed under [CC-BY-3.0](https://creativecommons.org/licenses/by/3.0/).
+All icons come from https://github.com/gammasoft/fatcow and are licensed under [CC-BY-3.0-US](https://creativecommons.org/licenses/by/3.0/us/).
