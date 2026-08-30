@@ -1,4 +1,5 @@
 #include "settingslistedit.h"
+#include "settingsdisplaydialog.h"
 #include "ui_settingslistedit.h"
 
 ListEditWidget::ListEditWidget(const QStringList &stringList, QWidget *parent) :
@@ -7,6 +8,12 @@ ListEditWidget::ListEditWidget(const QStringList &stringList, QWidget *parent) :
 	model(new QStringListModel(stringList, this))
 {
 	this->ui->setupUi(this);
+
+	this->ui->actionAdd->setIcon(QIcon(SettingsDisplayDialog::tr(":/QSettingsDialog/icons/add.ico")));
+	this->ui->actionRemove->setIcon(QIcon(SettingsDisplayDialog::tr(":/QSettingsDialog/icons/delete.ico")));
+	this->ui->actionMove_Up->setIcon(QIcon(SettingsDisplayDialog::tr(":/QSettingsDialog/icons/up.ico")));
+	this->ui->actionMove_Down->setIcon(QIcon(SettingsDisplayDialog::tr(":/QSettingsDialog/icons/down.ico")));
+
 	this->ui->listView->setModel(this->model);
 
 	this->ui->actionRemove->setShortcut(QKeySequence::Delete);

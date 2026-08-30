@@ -1,4 +1,5 @@
 #include "settingslineedit.h"
+#include "settingsdisplaydialog.h"
 #include <QUrl>
 #include <QRegularExpressionValidator>
 #include <QAction>
@@ -103,7 +104,7 @@ SettingsUuidEdit::SettingsUuidEdit(QWidget *parent) :
 		this->setText(toUuid(text).toString().toUpper());
 	});
 
-	auto action = this->addAction(QIcon(QStringLiteral(":/QSettingsDialog/icons/calc.ico")), QLineEdit::TrailingPosition);
+	auto action = this->addAction(QIcon(SettingsDisplayDialog::tr(":/QSettingsDialog/icons/calc.ico")), QLineEdit::TrailingPosition);
 	connect(action, &QAction::triggered,
 			this, &SettingsUuidEdit::generateId);
 }

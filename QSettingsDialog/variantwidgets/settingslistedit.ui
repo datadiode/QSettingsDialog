@@ -81,10 +81,6 @@
    </item>
   </layout>
   <action name="actionAdd">
-   <property name="icon">
-    <iconset resource="qsettingsdialog_variantwidgets_res.qrc">
-     <normaloff>:/QSettingsDialog/icons/add.ico</normaloff>:/QSettingsDialog/icons/add.ico</iconset>
-   </property>
    <property name="text">
     <string>Add</string>
    </property>
@@ -99,10 +95,6 @@
    </property>
   </action>
   <action name="actionRemove">
-   <property name="icon">
-    <iconset resource="qsettingsdialog_variantwidgets_res.qrc">
-     <normaloff>:/QSettingsDialog/icons/delete.ico</normaloff>:/QSettingsDialog/icons/delete.ico</iconset>
-   </property>
    <property name="text">
     <string>Remove</string>
    </property>
@@ -114,10 +106,6 @@
    </property>
   </action>
   <action name="actionMove_Up">
-   <property name="icon">
-    <iconset resource="qsettingsdialog_variantwidgets_res.qrc">
-     <normaloff>:/QSettingsDialog/icons/up.ico</normaloff>:/QSettingsDialog/icons/up.ico</iconset>
-   </property>
    <property name="text">
     <string>Move Up</string>
    </property>
@@ -132,10 +120,6 @@
    </property>
   </action>
   <action name="actionMove_Down">
-   <property name="icon">
-    <iconset resource="qsettingsdialog_variantwidgets_res.qrc">
-     <normaloff>:/QSettingsDialog/icons/down.ico</normaloff>:/QSettingsDialog/icons/down.ico</iconset>
-   </property>
    <property name="text">
     <string>Move Down</string>
    </property>

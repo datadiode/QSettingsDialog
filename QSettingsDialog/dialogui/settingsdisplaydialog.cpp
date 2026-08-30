@@ -24,6 +24,7 @@ SettingsDisplayDialog::SettingsDisplayDialog(QSettingsWidgetDialogEngine *dialog
 	workingDialog(nullptr)
 {
 	ui->setupUi(this);
+	setWindowIcon(QIcon(tr(":/QSettingsDialog/icons/gearSettings.ico")));
 	this->ui->buttonBox->button(QDialogButtonBox::Ok)->setAutoDefault(false);
 	this->ui->buttonBox->button(QDialogButtonBox::Cancel)->setAutoDefault(false);
 	this->ui->buttonBox->button(QDialogButtonBox::Apply)->setAutoDefault(false);

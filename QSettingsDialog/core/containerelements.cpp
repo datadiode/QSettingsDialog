@@ -9,6 +9,6 @@ QSharedPointer<SettingsSection> SettingsSection::createDefaultSection()
 QSharedPointer<SettingsCategory> SettingsCategory::createDefaultCategory()
 {
 	auto cat = new SettingsCategory(SettingsDisplayDialog::tr("General Settings"));
-	cat->icon = QIcon(QStringLiteral(":/QSettingsDialog/icons/settings.ico"));
+	cat->icon = QIcon(SettingsDisplayDialog::tr(":/QSettingsDialog/icons/settings.ico"));
 	return QSharedPointer<SettingsCategory>(cat);
 }

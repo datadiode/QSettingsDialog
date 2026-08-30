@@ -1,4 +1,5 @@
 #include "settingsdatetimeedit.h"
+#include "settingsdisplaydialog.h"
 #include <QCalendarWidget>
 #include <QTableView>
 #include <QToolButton>
@@ -85,7 +86,7 @@ static void setupCornerButton(QWidget *parent, QCalendarWidget *calendar)
 	if(viewTable) {
 		auto todayButton = new QToolButton(viewTable);
 		todayButton->setAutoRaise(true);
-		todayButton->setIcon(QIcon(QStringLiteral(":/QSettingsDialog/icons/today.ico")));
+		todayButton->setIcon(QIcon(SettingsDisplayDialog::tr(":/QSettingsDialog/icons/today.ico")));
 		QObject::connect(todayButton, &QToolButton::clicked, calendar, [calendar](){
 			calendar->setSelectedDate(QDate::currentDate());
 		});
